@@ -1,0 +1,21 @@
+<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="base_u" x1="30" y1="30" x2="206" y2="206" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffffff"/>
+<stop offset="100%" stop-color="#d6e3ee"/>
+</linearGradient>
+<filter id="fshadow_u" x="0" y="0" width="236" height="236" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0d264c" flood-opacity="0.45"/></filter>
+<radialGradient id="bloom_u" cx="80" cy="70" r="120" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="white" stop-opacity="0.5"/>
+<stop offset="100%" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<circle cx="118" cy="124" r="100" fill="#9bb3c6"/>
+<circle cx="118" cy="118" r="100" fill="url(#base_u)" filter="url(#fshadow_u)"/>
+<path d="M118 36 A82 82 0 0 1 196 92 L160 104 A44 44 0 0 0 118 74 Z" fill="#3b82f6"/>
+<path d="M196 92 A82 82 0 0 1 150 193 L136 158 A44 44 0 0 0 160 104 Z" fill="#10b981"/>
+<path d="M150 193 A82 82 0 0 1 48 158 L82 140 A44 44 0 0 0 136 158 Z" fill="#f59e0b"/>
+<path d="M48 158 A82 82 0 0 1 118 36 L118 74 A44 44 0 0 0 82 140 Z" fill="#8b5cf6"/>
+<circle cx="118" cy="118" r="34" fill="url(#base_u)"/>
+<circle cx="118" cy="118" r="100" fill="url(#bloom_u)"/>
+</svg>

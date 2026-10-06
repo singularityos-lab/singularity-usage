@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Disk Usage
+Comment=See which folders and files take up space
+Exec=singularity-usage %U
+Icon=dev.sinty.usage
+Terminal=false
+Type=Application
+Categories=System;Utility;
+Keywords=disk;space;usage;storage;folder;size;analyzer;
+StartupWMClass=dev.sinty.usage
+Actions=scan-home;scan-system;
+
+[Desktop Action scan-home]
+Name=Scan Home
+Exec=singularity-usage --home
+
+[Desktop Action scan-system]
+Name=Scan the System
+Exec=singularity-usage --system

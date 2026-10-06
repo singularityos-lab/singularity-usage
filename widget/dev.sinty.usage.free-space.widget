@@ -1,0 +1,8 @@
+[Widget]
+Id=usage.free-space
+ProviderId=dev.sinty.usage
+Name=Free Space
+IconName=drive-harddisk-symbolic
+Sizes=1x1;2x1
+Module=libsingularity-usage-widget.so
+ModuleSymbol=singularity_usage_widget_new
