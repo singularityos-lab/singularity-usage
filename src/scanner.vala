@@ -51,17 +51,15 @@ namespace Singularity.Apps.Usage {
                 progress (bytes, files, current);
                 return Source.CONTINUE;
             });
-            new Thread<void*> ("usage-scan", () => {
+            Async.dispatch(this, Async.Qos.UTILITY, (c) => {
                 Posix.Stat st;
                 if (Posix.lstat (path, out st) == 0) root_dev = (uint64) st.st_dev;
                 result = scan (path, null, path);
-                Idle.add (() => {
+                return () => {
                     Source.remove (tick);
                     progress (bytes, files, "");
                     finished (result, cancellable.is_cancelled ());
-                    return Source.REMOVE;
-                });
-                return null;
+                };
             });
         }
 

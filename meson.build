@@ -40,7 +40,7 @@ install_data('widget/dev.sinty.usage.free-space.widget',
 
 scanner_test = executable('usage-test',
   files('src/scanner.vala', 'tests/scanner_test.vala'),
-  dependencies: [gee_dep, posix_dep, dependency('gio-2.0')],
+  dependencies: [gee_dep, posix_dep, dependency('gio-2.0'), libsingularity_dep],
 )
 test('usage', scanner_test)
 
