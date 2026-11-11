@@ -22,7 +22,7 @@ if not meson.is_subproject() and libsingularity_dep.type_name() == 'internal'
 endif
 
 executable('singularity-usage',
-  files('src/scanner.vala', 'src/rings.vala', 'src/window.vala', 'src/app.vala'),
+  files('src/scanner.vala', 'src/rings.vala', 'src/window.vala', 'src/agent_intents.vala', 'src/app.vala'),
   dependencies: [gtk_dep, gee_dep, posix_dep, m_dep, libsingularity_dep],
   install: true
 )
