@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="236" height="236" viewBox="0 0 236 236" fill="none"><defs><linearGradient id="base_u" x1="30" y1="30" x2="206" y2="206" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffffff" />
+<stop offset="100%" stop-color="#d6e3ee" />
+</linearGradient>
+<filter id="fshadow_u" x="0" y="0" width="236" height="236" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0d264c" flood-opacity="0.45" /></filter>
+</defs><circle cx="118" cy="118" r="100" fill="url(#base_u)" filter="url(#fshadow_u)" />
+</svg>

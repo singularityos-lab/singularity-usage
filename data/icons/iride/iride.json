@@ -1,0 +1,223 @@
+{
+ "format": 1,
+ "canvas": [
+  236,
+  236
+ ],
+ "box": [
+  18,
+  18,
+  218,
+  224
+ ],
+ "stack": [
+  {
+   "layer": "layers/000.svg",
+   "piece": "base"
+  },
+  {
+   "layer": "layers/001.svg",
+   "piece": "base"
+  },
+  {
+   "rim": "M18 118A100 100 0 1 0 218 118A100 100 0 1 0 18 118Z",
+   "light": [
+    18,
+    18,
+    218,
+    218
+   ],
+   "piece": "base"
+  },
+  {
+   "layer": "layers/002.svg",
+   "piece": "blue"
+  },
+  {
+   "layer": "layers/003.svg",
+   "piece": "green"
+  },
+  {
+   "layer": "layers/004.svg",
+   "piece": "yellow"
+  },
+  {
+   "layer": "layers/005.svg",
+   "piece": "purple"
+  },
+  {
+   "layer": "layers/006.svg",
+   "piece": "center"
+  },
+  {
+   "layer": "layers/007.svg",
+   "piece": "light"
+  }
+ ],
+ "motion": [
+  {
+   "piece": "base",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "scale",
+     "from": [
+      0.8,
+      0.8
+     ],
+     "at": 0,
+     "duration": 320,
+     "ease": "spring"
+    }
+   ]
+  },
+  {
+   "piece": "blue",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -90
+     ],
+     "at": 140,
+     "duration": 420,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 140,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "green",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -90
+     ],
+     "at": 240,
+     "duration": 420,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 240,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "yellow",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -90
+     ],
+     "at": 340,
+     "duration": 420,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 340,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "purple",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -90
+     ],
+     "at": 440,
+     "duration": 360,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 440,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "center",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "scale",
+     "from": [
+      0.2,
+      0.2
+     ],
+     "at": 180,
+     "duration": 360,
+     "ease": "spring"
+    }
+   ]
+  },
+  {
+   "piece": "light",
+   "origin": [
+    118.0,
+    118.0
+   ],
+   "tracks": [
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 640,
+     "duration": 160,
+     "ease": "out"
+    }
+   ]
+  }
+ ]
+}
