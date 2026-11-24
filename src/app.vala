@@ -2,7 +2,7 @@ using Gtk;
 
 namespace Singularity.Apps.Usage {
 
-    public class UsageApp : Singularity.Application {
+    public class UsageApp : Singularity.Application, Singularity.Migration.Migratable {
 
         public UsageApp () {
             Object (application_id: "dev.sinty.usage", flags: ApplicationFlags.HANDLES_OPEN);
@@ -93,6 +93,28 @@ namespace Singularity.Apps.Usage {
 
         public override void activate () {
             ensure_window ();
+        }
+
+        public Variant save_model () {
+            return new VariantDict ().end ();
+        }
+
+        public async void restore_model (Variant model) throws Error {
+        }
+
+        public string window_kind (Gtk.Window w) {
+            return (w is UsageWindow) ? "usage" : "";
+        }
+
+        public Variant save_window (Gtk.Window w) {
+            return ((UsageWindow) w).save_migration ();
+        }
+
+        public async Gtk.Window? rebuild_window (string kind, Variant data) throws Error {
+            if (kind != "usage") return null;
+            var window = new UsageWindow (this);
+            yield window.restore_migration (data);
+            return window;
         }
 
         public override void open (File[] files, string hint) {

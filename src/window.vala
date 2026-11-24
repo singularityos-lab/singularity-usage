@@ -256,6 +256,46 @@ namespace Singularity.Apps.Usage {
             start_scan (new Location (path, label, "folder-symbolic"));
         }
 
+        public Variant save_migration () {
+            var d = new VariantDict ();
+            d.insert_value ("page", new Variant.string (stack.visible_child_name));
+            if (location != null) d.insert_value ("location", new Variant.string (Singularity.Migration.portable_path (File.new_for_path (location.path))));
+            if (current != null) d.insert_value ("folder", new Variant.string (Singularity.Migration.portable_path (File.new_for_path (current.path ()))));
+            return d.end ();
+        }
+
+        public async void restore_migration (Variant data) {
+            var d = new VariantDict (data);
+            var page = d.lookup_value ("page", VariantType.STRING);
+            var place = d.lookup_value ("location", VariantType.STRING);
+            if (page == null || place == null || page.get_string () == "start") return;
+            string? path = Singularity.Migration.local_file (place.get_string ()).get_path ();
+            if (path == null) return;
+            scan_path (path);
+            if (page.get_string () != "result" || scanner == null) return;
+            var s = scanner;
+            ulong id = s.finished.connect (() => Idle.add (restore_migration.callback));
+            yield;
+            s.disconnect (id);
+            var folder = d.lookup_value ("folder", VariantType.STRING);
+            if (tree == null || current == null || folder == null) return;
+            string? relative = File.new_for_path (tree.path ()).get_relative_path (Singularity.Migration.local_file (folder.get_string ()));
+            if (relative == null) return;
+            Node node = tree;
+            foreach (string part in relative.split ("/")) {
+                Node? next = null;
+                foreach (unowned Node c in node.children) {
+                    if (c.name == part) {
+                        next = c;
+                        break;
+                    }
+                }
+                if (next == null) break;
+                node = next;
+            }
+            show_node (node);
+        }
+
         private void choose_folder () {
             var dialog = new FileDialog ();
             dialog.title = _("Choose a Folder to Scan");
